@@ -1,0 +1,30 @@
+.frontPage-Content {
+  height: fit-content;
+  min-height: 500px;
+  width: 400px;
+
+  .frontPage-Title{
+    //font-size: 2em;
+  }
+
+  .frontPage-Img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    //clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+    border-radius: 10px;
+
+    @media (max-width: 400px) {
+      height: 100%;
+    }
+  }
+  .frontPage-BtnDiv {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

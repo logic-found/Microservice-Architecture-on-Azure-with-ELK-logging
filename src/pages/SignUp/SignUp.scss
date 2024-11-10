@@ -1,0 +1,87 @@
+.signUp-Content{
+    
+    min-height: 500px;
+    max-width: 1000px;
+    width: calc(100% - 25px);
+    display: flex;
+    align-items: center;
+
+    @media (max-width:768px) {
+        height: 100%;
+        flex-direction: column;
+        min-height: fit-content;
+        min-width: fit-content;
+        width: calc(100% - 20px);
+        
+    }
+
+    .signUp-from-img{
+        height: 100%;
+        width: 50%;
+
+        @media (max-width:768px) {
+            height: 40%;
+            width: 100%;
+        }
+    }
+
+    .signUp-Form{
+        height: 100%;
+        width: 50%;
+        padding-bottom: 10px;
+
+        @media (max-width:768px) {
+            height: 60%;
+            width: 90%;
+        }
+        @media (max-width:400px) {
+            height: 60%;
+            width: 90%;
+        }
+        
+
+        .signUp-Form-Field{
+            margin-top: 15px;
+
+            .signUp-Form-Label{
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--text-primary);
+                margin-bottom: 10px;
+ 
+            }
+            .signUp-Form-Input{
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 5px;
+                color: var(--bg-light);
+
+                &::placeholder{
+                    color: var(--bg-light)
+                }
+            }
+        }
+        .Btn-div{
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+    .redirectToSignIn{
+        color: var(--text-primary);
+        margin-top: 10px;
+        text-align: center;
+
+        .redirect{
+            color: var(--bg-three);
+            cursor: pointer;
+        }
+    }
+
+}
