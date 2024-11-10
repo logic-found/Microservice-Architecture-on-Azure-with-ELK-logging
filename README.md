@@ -1,3 +1,1 @@
-This branch consist of Backend Microservices:
-- User Service
-- Notes Service
+This branch consists of Bicep Templates for all the resources used in this architecture and its infrastructure deployment pipeline.
