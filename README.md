@@ -36,7 +36,7 @@ Using Bicep templates, streamline the creation of Azure resources.
 1. **Define Infrastructure Resources**: Use Bicep to define all the required resources .
 2. **Deploy with CI/CD Pipeline**: Set up a pipeline in Azure DevOps to automate infrastructure provisioning, ensuring consistency and repeatability.
 
-
+--- 
 ### Step 2: Deploying the Frontend to Azure App Service
 The frontend application, developed in React, is containerized with Docker for easy deployment and scaling. Deployed it on Azure App Service through CI/CD:
 - **Create a Docker Image**: Build the Docker image for the React app.
