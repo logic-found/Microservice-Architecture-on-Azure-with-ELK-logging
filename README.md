@@ -1,25 +1,27 @@
 # Deploying a Microservice Architecture on Azure with Secure ELK Logging
 Implement a scalable microservices architecture with secure frontend-backend integration via API Management, centralized logging with ELK for effective monitoring, CosmosDB for data storage and automated infrastructure provisioning and deployment using Bicep and CI/CD pipelines.
-<Cloud Architecture Diagram>
+
+<img width="850" alt="Cloud Architecture Diagram" src="https://github.com/user-attachments/assets/98874ae7-f3d7-477f-ab6f-51d15ed17a60">
 
 ## Key Components of the Architecture
-- **Infrastructure as Code:** Utilized Bicep an Azure-native infrastructure-as-code language, simplifies infrastructure provisioning and allows easy tracking, updating, and deployment via CI/CD.
+- **Bicep** : An Azure-native infrastructure-as-code language, simplifies infrastructure provisioning and allows easy tracking, updating, and deployment via CI/CD.
 - **Azure DevOps**: CI/CD tool for automating the development and deployment processes.
 - **Frontend:** A React-based application deployed on Azure App Service.
 - **Backend:** Node.js-based microservices for modular business logic, each deployed on Azure Functions.
-- **Data Storage:** CosmosDB as a globally distributed NoSQL database.
+- **Data Storage:** Cosmos DB as database providing a managed, scalable NoSQL database solution for storing app data.
 - **API Gateway:** Azure API Management (APIM) to secure and manage API access.
 - **Logging and Monitoring:** ELK (Elasticsearch and Kibana) on an Azure VM for centralized logging.
 
----
 ## Application Overview
 SimpleNote is a note-taking microservice application with the following features:
 - User authentication and authorization
 - CRUD operations for notes
 
+<img width="850" alt="SimpleNote Application Architecture Diagram" src="https://github.com/user-attachments/assets/c1e24514-e74c-448d-b450-25eb13511dae">
+
 **Backend Microservices:**
-- User Service : to perform authentication
-- Notes Service : to perform CRUD operation on notes
+- User Service : performs authentication
+- Notes Service : performs CRUD operation on notes
 
 **Tech Stack** : 
 - Frontend : React
@@ -92,3 +94,11 @@ Deploy ELK (Elasticsearch and Kibana) to centralize logging on an Azure VM using
 | Automated Deployments | Network Security Groups |
 | Centralized Monitoring |
 | Cloud-native Storage | 
+
+## References
+- [Azure DevOps for Bicep deployment](https://learn.microsoft.com/en-us/training/modules/build-first-bicep-deployment-pipeline-using-azure-pipelines/4-deploy-bicep-files-pipeline)
+- [Azure DevOps to deploy Azure Node.js Function App](https://www.mickpatterson.com.au/blog/use-azure-devops-to-deploy-a-nodejs-function-app)
+- [Elasticsearch documentation](https://www.elastic.co/blog/getting-started-with-the-elastic-stack-and-docker-compose)
+- [ELK documentation (certificate fingerprint)](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-connecting.html#authentication)
+
+
