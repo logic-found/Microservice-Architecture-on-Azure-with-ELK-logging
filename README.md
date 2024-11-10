@@ -7,7 +7,7 @@ Implement a scalable microservices architecture with secure frontend-backend int
 - **Bicep** : An Azure-native infrastructure-as-code language, simplifies infrastructure provisioning and allows easy tracking, updating, and deployment via CI/CD.
 - **Azure DevOps**: CI/CD tool for automating the development and deployment processes.
 - **Frontend:** A React-based application deployed on Azure App Service.
-- **Backend:** Node.js-based microservices for modular business logic, each deployed on Azure Functions.
+- **Backend:** Deployed Node.js microservices as Azure functions, each handling a specific service independently.
 - **Data Storage:** Cosmos DB as database providing a managed, scalable NoSQL database solution for storing app data.
 - **API Gateway:** Azure API Management (APIM) to secure and manage API access.
 - **Logging and Monitoring:** ELK (Elasticsearch and Kibana) on an Azure VM for centralized logging.
