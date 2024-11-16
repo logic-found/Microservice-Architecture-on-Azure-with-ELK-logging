@@ -63,6 +63,7 @@ Using APIM, secure backend microservices, preventing direct access from the fron
 
 ### Step 5: Cosmos DB integration
 Integrate the database with backend services bypassing the Cosmos connection string.
+
 ---
 
 ### Step 6: Implementing Secure ELK Logging on Azure VM
