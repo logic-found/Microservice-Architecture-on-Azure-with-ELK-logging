@@ -4,13 +4,14 @@ Implement a scalable microservices architecture with secure frontend-backend int
 <img width="850" alt="Cloud Architecture Diagram" src="https://github.com/user-attachments/assets/98874ae7-f3d7-477f-ab6f-51d15ed17a60">
 
 ## Key Components of the Architecture
-- **Bicep** : An Azure-native infrastructure-as-code language, simplifies infrastructure provisioning and allows easy tracking, updating, and deployment via CI/CD.
-- **Azure DevOps**: CI/CD tool for automating the development and deployment processes.
-- **Frontend:** A React-based application deployed on Azure App Service.
-- **Backend:** Deployed Node.js microservices as Azure functions, each handling a specific service independently.
-- **Data Storage:** Cosmos DB as database providing a managed, scalable NoSQL database solution for storing app data.
-- **API Gateway:** Azure API Management (APIM) to secure and manage API access.
-- **Logging and Monitoring:** ELK (Elasticsearch and Kibana) on an Azure VM for centralized logging.
+- **Bicep** : An Azure-native infrastructure-as-code language, simplifies infrastructure provisioning and allows easy tracking, updating, and deployment of services.
+- **Azure DevOps**: Utilized as the CI/CD tool for automating the development and deployment processes.
+- **Azure App Service:** Hosted the React frontend on App Service deployed via Docker images.
+- **Azure Container Registry:** Used store the docker images.
+- **Azure Function App:** Deployed Node.js microservices as Azure functions, each handling a specific service independently.
+- **Azure Cosmos DB:** Utilized Cosmos DB as database providing a managed, scalable NoSQL database solution for storing app data.
+- **Azure API Gateway:** Secures and manages API access to the backend services.
+- **Logging and Monitoring:** Used Elastic Search and Kibana for monitoring. Collects and visualizes backend logs, enabling real-time monitoring and troubleshooting. Deployed on **Azure VM** via docker-compose and utilized certificates for secure connection.
 
 ## Application Overview
 SimpleNote is a note-taking microservice application with the following features:
@@ -35,14 +36,13 @@ Using Bicep templates, streamline the creation of Azure resources.
 
 1. **Define Infrastructure Resources**: Use Bicep to define all the required resources .
 2. **Deploy with CI/CD Pipeline**: Set up a pipeline in Azure DevOps to automate infrastructure provisioning, ensuring consistency and repeatability.
-
 --- 
+
 ### Step 2: Deploying the Frontend to Azure App Service
 The frontend application, developed in React, is containerized with Docker for easy deployment and scaling. Deployed it on Azure App Service through CI/CD:
-- **Create a Docker Image**: Build the Docker image for the React app.
-- **Push to ACR**: Push the Docker image to Azure Container Registry.
-- **Deploy to App Service**: Deploy the image from ACR to Azure App Service.
-
+1. **Create a Docker Image**: Build the Docker image for the React app.
+2. **Push to ACR**: Push the Docker image to Azure Container Registry.
+3. **Deploy to App Service**: Deploy the image from ACR to Azure App Service.
 ---
 
 ### Step 3: Deploying Backend Microservices on Azure Functions
@@ -53,7 +53,6 @@ Each Node.js microservice is deployed as a standalone Azure Function, offering s
     - Configure each service as an Azure Function.
 2. **Set Up CI/CD Pipelines**:
     - Create an Azure DevOps pipeline for each microservice to build and deploy the code to Azure Functions.
-
 ---
 
 ### Step 4: Securing API Traffic with Azure API Management (APIM)
@@ -64,6 +63,7 @@ Using APIM, secure backend microservices, preventing direct access from the fron
 ---
 ### Step 5: Cosmos DB integration
 Integrate database with backend services by passing the Cosmos connection string.
+---
 
 ### Step 6: Implementing Secure ELK Logging on Azure VM
 Deploy ELK (Elasticsearch and Kibana) to centralize logging on an Azure VM using Docker Compose. Enabling SSL/TLS security on ELK ensures encrypted data transmission to and from the logging system. As logs are sent directly to Elasticsearch, Logstash is not required in this setup. Docker and Docker Compose are pre-installed on the VM via bicep.
